@@ -15,10 +15,10 @@ public class CalcEngine {
      *
      *  @param parsedInput
      */
-    public void runCalculator(CalculatorInput[] parsedInput) {
-        int operandOne = parsedInput[0].getOperand();
-        int operandTwo = parsedInput[2].getOperand();
-        String operator = parsedInput[1].getOperator();
+    public void runCalculator(CalculatorInput parsedInput) {
+        int operandOne = parsedInput.getOperand1();
+        int operandTwo = parsedInput.getOperand2();
+        String operator = parsedInput.getOperator();
 
         // depending on the operator, call correct calculator method and
         // print the returned value
