@@ -27,7 +27,7 @@ public class Init {
             if (calculatorInput.validateOperands(rawInput[0], rawInput[2])
                     && calculatorInput.validateOperator(rawInput[1])) {
                 // parse input
-                CalculatorInput[] parsedInput = calculatorInput.parseInput(rawInput);
+                CalculatorInput parsedInput = calculatorInput.parseInput(rawInput);
                 // do the calculation
                 calcEngine.runCalculator(parsedInput);
             }

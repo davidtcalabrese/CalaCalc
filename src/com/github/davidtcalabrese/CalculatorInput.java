@@ -1,5 +1,6 @@
 package com.github.davidtcalabrese;
-/** this class serves as a blueprint for CalculatorInput objects
+/**
+ * This class serves as a blueprint for CalculatorInput objects
  * note: I was thinking that I needed to be able to pass the operator (a
  * String) and both operands (ints) to the CalcEngine's methods as an array
  * and since they are of different types this wasn't possible so I created
@@ -12,23 +13,40 @@ package com.github.davidtcalabrese;
  * 7/15/2021
  */
 public class CalculatorInput {
-    private int operand;
+    private int operand1;
+    private int operand2;
     private String operator;
 
     /**
-     * Gets the value of operand
-     * @return value of operand
+     * Gets the value of operand1
+     * @return value of operand1
      */
-    public int getOperand() {
-        return operand;
+    public int getOperand1() {
+        return operand1;
     }
 
     /**
-     * Sets the value operand
-     * @param operand value of operand
+     * Sets the value operand1
+     * @param operand1 value of operand1
      */
-    public void setOperand(int operand) {
-        this.operand = operand;
+    public void setOperand1(int operand1) {
+        this.operand1 = operand1;
+    }
+
+    /**
+     * Gets the value of operand2
+     * @return value of operand2
+     */
+    public int getOperand2() {
+        return operand2;
+    }
+
+    /**
+     * Sets the value operand2
+     * @param operand2 value of operand2
+     */
+    public void setOperand2(int operand2) {
+        this.operand2 = operand2;
     }
 
     /**
@@ -94,21 +112,13 @@ public class CalculatorInput {
      *  is the first operand, the value at index 1 is the operator and the
      *  value at index 2 is the second operand
      */
-    public CalculatorInput[] parseInput(String[] rawInput) {
-        CalculatorInput inputOne = new CalculatorInput();
-        CalculatorInput inputTwo = new CalculatorInput();
-        CalculatorInput operator = new CalculatorInput();
+    public CalculatorInput parseInput(String[] rawInput) {
+        CalculatorInput parsedInput = new CalculatorInput();
 
         // convert from strings to ints and store as inputOne & inputTwo
-        inputOne.setOperand(Integer.parseInt(rawInput[0]));
-        inputTwo.setOperand(Integer.parseInt(rawInput[2]));
-        operator.setOperator(rawInput[1]);
-
-        // store as array of CalculatorInput so it can be passed to
-        CalculatorInput[] parsedInput = new CalculatorInput[3];
-        parsedInput[0] = inputOne;
-        parsedInput[2] = inputTwo;
-        parsedInput[1] = operator;
+        parsedInput.setOperand1(Integer.parseInt(rawInput[0]));
+        parsedInput.setOperand2(Integer.parseInt(rawInput[2]));
+        parsedInput.setOperator(rawInput[1]);
 
         return parsedInput;
     }
